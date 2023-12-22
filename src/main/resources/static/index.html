@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome page</title>
+    <style>
+        body {
+            background-image: url("img/img.png");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #000;
+            align-self: flex-start;
+            margin-left: 20px;
+        }
+
+        .links-container {
+            margin-top: 40px;
+            margin-left: 30px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .register-link {
+            text-decoration: none;
+            color: black;
+            margin-right: 10px;
+        }
+
+        .login-link {
+            text-decoration: none;
+            color: red;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Bienvenue à notre Bibliothèque eXpress</h1>
+    <div class="links-container">
+        <a href="/register" class="register-link">Aller vers l'inscription</a>
+        <a href="/login" class="login-link">Aller vers la connexion</a>
+    </div>
+</div>
+</body>
+</html>
