@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .card-info {
+            margin-top: 30px;
+        }
+
+        .card-label {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-$END$
+<h1>Success!</h1>
+<div class="message">
+    <p>Your card has been successfully assigned.</p>
+</div>
+<div class="card-info">
+    <p class="card-label">Card Number:</p>
+    <p th:text="${cardNumber}"></p>
+    <p class="card-label">Expiration Date:</p>
+    <p th:text="${expirationDate}"></p>
+</div>
 </body>
 </html>

@@ -1,10 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Online Catalogue</title>
+    <style>
+        body {
+            background-image: url("image1.jpg");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 250px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="container">
+    <img src="image1.jpg" alt="Bibliothèque">
+    <h1>Catalogue en ligne</h1>
+
+    <form method="post" action="/search">
+        <input type="text" name="searchTerm" placeholder="Rechercher par titre, auteur, catégorie..." required>
+        <input type="submit" value="Rechercher">
+    </form>
+
+    <table>
+        <tr>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Catégorie</th>
+            <th>Disponibilité</th>
+        </tr>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.category}"></td>
+            <td>
+                <span th:if="${book.available}">Disponible</span>
+                <span th:unless="${book.available}">Indisponible</span>
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

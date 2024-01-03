@@ -20,12 +20,11 @@ public class LibraryCardController {
                              @RequestParam("cvv") String cvv,
                              Model model) {
 
-        // Effectuez ici le traitement nécessaire pour attribuer la carte
 
-        // Ajoutez les attributs au modèle pour les utiliser dans la vue de succès
+
         model.addAttribute("cardNumber", cardNumber);
         model.addAttribute("expirationDate", expirationDate);
 
-        return "success"; // Retourne le nom de la vue HTML pour afficher la page de succès
+        return "success";
     }
 }
