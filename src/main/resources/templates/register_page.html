@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register page</title>
+
+</head>
+<body>
+<style>
+    body {
+        background-image: url("../static/img/image1.jpg");
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    .form {
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        width: 350px;
+        min-height: 400px;
+        background-color: #fff;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+        padding: 50px;
+        box-sizing: border-box;
+    }
+
+    .form h2 {
+        color: #777;
+        margin: 0 0 40px;
+        padding: 0;
+    }
+
+    .form .input-box {
+        position: relative;
+        margin: 20px 0;
+    }
+
+    .form .input-box input {
+        width: 100%;
+        font-size: 16px;
+        border: none;
+        border-bottom: 2px solid #777;
+        outline: none;
+        padding: 10px;
+        padding-left: 30px;
+        box-sizing: border-box;
+        font-weight: bold;
+        color: #777;
+    }
+
+    .form .input-box input:focus,
+    .form .input-box input:valid {
+        border-bottom-color: #03a9f4;
+    }
+
+    .form .input-box .fa {
+        position: absolute;
+        top: 8px;
+        left: 5px;
+        font-size: 18px;
+        color: #777;
+    }
+
+    .form .input-box input[type="submit"] {
+        border: none;
+        cursor: pointer;
+        background-color: #03a9f4;
+        color: #fff;
+        font-weight: bold;
+        transition: 0.5s;
+    }
+
+    .form .input-box input[type="submit"]:hover {
+        background-color: #ff4987;
+    }
+
+    .form a {
+        text-decoration: none;
+        color: #777;
+        margin-top: 20px;
+        font-weight: bold;
+        display: inline-block;
+        transition: 0.5s;
+    }
+
+    .form a:hover {
+        color: #ff4987;
+    }
+</style>
+<div class="form" >
+    <form method="post" action="/register" th:object="${registerRequest}">
+        <h2>Register</h2>
+        <div class="input-box">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text" name="login" placeholder="login" required>
+        </div>
+        <div class="input-box">
+            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        <div class="input-box">
+
+            <input type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        </div>
+        <div class="input-box">
+            <input type="submit" name="sign-in" value="login">
+        </div>
+        <a href="/static">Navigate to main</a>
+    </form>
+</div>
+</body>
+</html>
